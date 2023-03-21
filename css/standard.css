@@ -1,0 +1,64 @@
+      body
+      {
+        background: #232323;
+        margin: 20px;
+      }
+      
+      p
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 20px;
+      }
+      
+      a
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 20px;
+      }
+      
+      h1
+      {
+        color: white;
+        font-family: Arial Black;
+        font-size: 50px;
+      }
+      
+      h2
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 25px;
+      }
+      
+      h3
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 23px;
+      }
+      
+      th
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 10px;
+      }
+      
+      td
+      {
+        color: white;
+        font-family: consolas;
+        font-size: 18px;
+        border: 1px solid;
+        padding: 10px;
+      }
+      
+      table
+      {
+        border: 1px solid;
+        border-collapse: collapse;
+      }
