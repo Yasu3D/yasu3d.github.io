@@ -7,22 +7,7 @@
     <title>a little corner of 3d stuff</title>
     <link href="/css/standard.css" rel="stylesheet" type="text/css" media="all">
     
-    <style>
-    #main {
-      float: left;
-      width: 100% - 200px;
-      background-color: #303030;
-    }
-    
-    #linkbar {
-      background-color: #333333;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 200px;
-      padding-left: 20px;
-    }
-    
+    <style>    
     #previewcard {
       padding: 20px;
       width: 256px;
@@ -32,22 +17,27 @@
     
   </head>
   <body>
-    <div id="linkbar">
-      <a href="/"><p>main</p></a>
-      <a href="/modelpreviews"><p>3d art portfolio</p></a>
-    </div>
-    <div id="vl"></div>
+    <div id="main">
+      
+      <div id="linkbar">
+        <a href="/"><p>main</p></a>
+        <a href="/modelpreviews"><p>3d art portfolio</p></a>
+      </div>
 
-    <h1>Model Previews</h1>
-    <p>A list of models I've made to have a look at.
-    <br>The 3d viewer I used is <a href="https://modelviewer.dev">modelviewer.dev</a>
-    </p>
-    
-    <div>
-      <a href="/modelpreviews/biggoronsword.html"><img id="previewcard" src="/images/preview_icons/biggoronsword.png" alt="biggoron sword"></a>
-      <a href="/modelpreviews/gerstlauerinfinity.html"><img id="previewcard" src="/images/preview_icons/gerstlauerinfinity.png" alt="gerstlauer infinity"></a>
-      <a href="/modelpreviews/gerstlauerskyfly.html"><img id="previewcard" src="/images/preview_icons/gerstlauerskyfly.png" alt="gerstlauer skyfly"></a>
-      <a href="/modelpreviews/luciferprime.html"><img id="previewcard" src="/images/preview_icons/luciferprime.png" alt="lucifer prime"></a>
+      <div id="content">
+        <h1>Model Previews</h1>
+        <p>A list of models I've made to have a look at.
+        <br>The 3d viewer I used is <a href="https://modelviewer.dev">modelviewer.dev</a></p>
+
+        <div>
+          <a href="/modelpreviews/biggoronsword.html"><img id="previewcard" src="/images/preview_icons/biggoronsword.png" alt="biggoron sword"></a>
+          <a href="/modelpreviews/gerstlauerinfinity.html"><img id="previewcard" src="/images/preview_icons/gerstlauerinfinity.png" alt="gerstlauer infinity"></a>
+          <a href="/modelpreviews/gerstlauerskyfly.html"><img id="previewcard" src="/images/preview_icons/gerstlauerskyfly.png" alt="gerstlauer skyfly"></a>
+          <a href="/modelpreviews/luciferprime.html"><img id="previewcard" src="/images/preview_icons/luciferprime.png" alt="lucifer prime"></a>
+        </div>
+
+      </div>
+
     </div>
   </body>
 </html>

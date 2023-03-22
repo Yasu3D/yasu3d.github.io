@@ -67,3 +67,29 @@
         border-left: 2px white;
         height: 100%;
       }
+
+      #main {
+        width: 100%;
+        height: 100%;
+      }
+
+      #content {
+        position: absolute;
+        float: left;
+        width: calc(100% - 200px);
+      }
+
+      #linkbar {
+        background-color: #333333;
+        float: right;
+        width: 200px;
+        height: calc(100vh - 17px);
+      }
+
+      #linkbar p {
+        padding-left: 20px;
+      }
+
+      #content p {
+        padding-right: 20px;
+      }
