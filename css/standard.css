@@ -62,3 +62,8 @@
         border: 1px solid;
         border-collapse: collapse;
       }
+
+      #vl {
+        border-left: 2px white;
+        height: 100%;
+      }
