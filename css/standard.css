@@ -83,7 +83,7 @@
         background-color: #333333;
         float: right;
         width: 200px;
-        height: calc(100vh - 17px);
+        border: 20px;
       }
 
       #linkbar p {
