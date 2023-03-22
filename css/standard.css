@@ -82,9 +82,11 @@
       #linkbar {
         background-color: #333333;
         float: right;
-        width: 200px;
-        height: calc(100vh - 17px);
-        border: 20px;
+        width: 250px;
+        height: calc(100vh - 50px);
+        border-radius: 5px;
+        position: relative;
+        z-index: 5;
       }
 
       #linkbar p {
