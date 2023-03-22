@@ -76,7 +76,7 @@
       #content {
         position: absolute;
         float: left;
-        width: calc(100% - 200px);
+        width: calc(100% - 250px);
       }
 
       #linkbar {
