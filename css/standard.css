@@ -1,99 +1,97 @@
-      body
-      {
-        background: #232323;
-        margin: 20px;
-      }
-      
-      p
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 20px;
-      }
-      
-      a
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 20px;
-      }
-      
-      h1
-      {
-        color: white;
-        font-family: Arial Black;
-        font-size: 50px;
-      }
-      
-      h2
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 25px;
-      }
-      
-      h3
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 23px;
-      }
-      
-      th
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 20px;
-        border: 1px solid;
-        padding: 10px;
-      }
-      
-      td
-      {
-        color: white;
-        font-family: consolas;
-        font-size: 18px;
-        border: 1px solid;
-        padding: 10px;
-      }
-      
-      table
-      {
-        border: 1px solid;
-        border-collapse: collapse;
-      }
+/* fonts */
 
-      #vl {
-        border-left: 2px white;
-        height: 100%;
-      }
+@font-face {
+  font-family: 'snes';
+  src: url("./fonts/snes-webfont.woff2") format('woff2'),
+       url("./fonts/snes-webfont.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
-      #main {
-        width: 100%;
-        height: 100%;
-      }
+/* alignment */
 
-      #content {
-        position: absolute;
-        float: left;
-        width: calc(100% - 250px);
-      }
+html, body {
+  margin: 0 10px;
+  background: #EEE;
+}
 
-      #linkbar {
-        background-color: #333333;
-        float: right;
-        width: 250px;
-        height: calc(100vh - 50px);
-        border-radius: 5px;
-        position: relative;
-        z-index: 5;
-      }
+header {
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
-      #linkbar p {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+}
 
-      #content p {
-        padding-right: 20px;
-      }
+nav ul {
+  flex: 1;
+  text-align: center;
+  margin: 0 30px;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 0 30px;
+}
+
+hr.solid{
+  border-top: 1px solid #222;
+  border-bottom: none;
+}
+
+/* text */
+
+nav h1 {
+  margin-left: 30px;
+  font-size: 45px;
+  font-family: snes;
+}
+
+nav h2 {
+  margin-right: 30px;
+  font-size: 20px;
+  font-family: consolas;
+  text-decoration: underline;
+}
+
+li a {
+  font-size: 18px;
+  font-family: consolas;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover {
+  color: #444;
+}
+
+h1 h2 h3 p a {
+  color: #222;
+}
+
+p {
+  font-size: 20px;
+  font-family: consolas;
+}
+
+h3 {
+  font-family: consolas;
+  font-size: 25px;
+}
+
+h4 {
+  font-family: consolas;
+  font-size: 22px;
+}
