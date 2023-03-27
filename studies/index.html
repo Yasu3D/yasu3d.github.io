@@ -22,6 +22,10 @@
         overflow-y: auto;
       }
 
+      #posts span {
+        padding: 20px 0;
+      }
+
       #posts h3 {
         margin-top: 0px;
       }
@@ -68,7 +72,8 @@
     <main>
       <div id="index">
         <ul>
-          <li><a href="#placeforstudies">A place for Studies and Rambles.</a></li>
+          <li><a href="#placeforstudies">> A place for Studies and Rambles.</a></li>
+          <li><a href="#mudshader">> Making a mud shader.</a></li>
         </ul>
       </div>
 
@@ -79,10 +84,94 @@
           <p>Hello! This is the talky place. I'm gonna (hopefully) write things about graphics and modelling in video games and put 'em here.
             <br>In the meantime, enjoy some more maxwell.
           </p>
-          <img src="/media/images/maxwell.gif" height="120px" width="180px" style="cursor:grab" draggable="false">
+          <img src="https://yasu3d.art/media/images/maxwell.gif" height="120px" width="180px" style="cursor:grab" draggable="false">
+        </span>
+
+        <hr class="solid">
+
+        <span>
+          <p id="date">27/03/2023</p>
+          <h3><a id="mudshader">Making a mud shader.</a></h3>
+          <p><i>Soooooo...</i> I've been playing a lot of Red Dead Redemption 2 recently.
+            <br>The game (thanks to the amazing graphics and story) is absolutely stunning, but there's one thing in particular that captivated me : mud and puddles.</p>
+          <p>A convincing mud or puddle effect has been something I wanted to do for a while now, so my first thought to achieve that kind of effect was using the roughness and basecolor maps to add puddles. But it's not <i>quite</i> that easy.
+          </p>
+          <p>My goal with this mini-project isn't to craft an intricate mud-simulation system with displacement- and footstep-maps like RDR2's. 
+          <br>Instead, I want to make a still somewhat simple shader that can render a layer of water on top of a surface <i>without transparency</i>.
+          <br>I'm going to use the <b>Unity URP</b> and create the shader in <b>Shadergraph</b>.
+          </p>
+          <p>My initial approach/thought is to have a separate 'mud' map that affects the heightmap, roughness and basecolor depending on viewing angle, which can be achieved with a fresnel node and some math.
+            <br>For assets I'm going to use <a href="https://ambientcg.com/view?id=Ground048">this</a> ground texture from AmbientCG.
+          </p>
+          <img src="/media/images/mudmap-study/mudtexture.png" width="100%">
+          <p>The first step is - of course - just to set up a basic URP lit shader. I chose to also add some Parallax Occlusion Mapping for extra fanciness™.</p>
+          <img src="/media/images/mudmap-study/basicshader.png" width="100%">
+          <p><i>Sigh...</i> first roadblock. The Parallax Occlusion Mapping Node in URP Shadergraph only accepts <b>T2</b> inputs. Blend Nodes (for blending the puddle map and the heightmap) output <b>Out(4)</b>.</p>
+          <img src="/media/images/mudmap-study/parallaxnode.png" width="100%">
+          <p class="img-subtitle">> it no worky.</p>
+          <p>So instead, I'm going to use the <b>Unity HDRP</b> with Tesselation.
+            <br>I know I said it wouldn't have displacement mapping, but fuck it we ball (and tesselate).
+            <br>I won't document the entire process of getting the shadergraph to work as that was enough of a headache alone, but I'll give some Insights.
+          </p>
+          <p>I (again) started off with a simple Lit shader, then hooked up all the textures to the fragment outputs and checking what they look like.
+            <br>Next, I started working on the math to blend the heightmap and mudmap. Screening the mudmap over height, then subtracting the mudmap from the result gave me what I needed.
+          </p>
+          <img src="/media/images/mudmap-study/heightmap_blending.png" width="100%">
+          <p class="img-subtitle">> it's getting cursed already</p>
+          <p>Next, I had to actually learn how tesselation in shadergraph works. It was easy enough, just a 'quality' value going into <i>Tesselation Factor</i> plus a NormalVector multiplied with 'amplitude' and the freshly blended heightmap going into <i>Tesselation Displacement</i>.</p>
+          <p>The rest was just figuring out more blending. It's simpler to imagine than to implement. So here's the main parts that make the effect work:
+            <br>> The mudmap determines where water pools and where it doesn't. black = dry, white = water.
+            <br>> Water flattens out the normalmap. This is done by changing the mudmap from black/white to white/blue, then multiplying it with the main normalmap.
+            <br>> Water also has a smoothness of 1.0, but it gets rougher (=more transparent because it's less reflective) at an angle. This is done by multiplying the mudmap with a fresnel node and adding it to the main roughness map.
+          </p>
+
+          <p>That's basically all the shader does. I only added some extra parameters to tweak the water level and how hard the waterline should be. That's all done with a power and a contrast node.</p>
+
+
+          <p><i>"But why not just make the heightmap manually and not have to worry about blending at runtime?"</i> I hear you ask.
+            <br>The answer is simple: <b>because I fuckin' can</b>.
+            <br>The less simple answer is that I wanted the shader to be dynamic and for the puddles to be easily editable. That allows me to quickly change out textures and do dumb stuff with it, all within Unity.
+          </p>
+          <img src="/media/images/mudmap-study/hahaball.png" width="100%">
+          <p class="img-subtitle">> just doin' research™.</p>
+          <p>Back to what I was saying.
+            <br>2 coffees and a headache later, here it is.
+          </p>
+          <img src="/media/images/mudmap-study/messyshader.png" width="100%">
+          <p class="img-subtitle">> it ain't pretty, but it sure works.</p>
+          <p>A little organizing doesn't hurt (anyone besides me), so I might as well. brb.</p>
+          <img src="/media/images/mudmap-study/cleanshader.png" width="100%">
+          <p class="img-subtitle">> ahhh, that's better.</p>
+          <p>Alright! So what does it <i>actually</i> look like? It's about time I show the results.
+          <br>It may not be as perfect as RDR2's mud and dirt, and with extreme tesselation it <i>may</i> not be the nicest to your GPU, but it still looks real good.</p>
+          <img src="/media/images/mudmap-study/shaderresults-0.png" width="100%">
+          <img src="/media/images/mudmap-study/shaderresults-1.png" width="100%">
+          <img src="/media/images/mudmap-study/shaderresults-2.png" width="100%">
+          <p class="img-subtitle">> wowee. that sure is water!</p>
+          <p>And a little animation to show off the reflections and parameters:</p>
+          <img src="/media/images/mudmap-study/shaderresults.gif" width="100%">
+          <p class="img-subtitle">> reflections, waterlevel, waterline, wetness</p>
+          <img src="/media/images/mudmap-study/material_ui.png" width="50%">
+          <p class="img-subtitle">> material inputs and parameters to allow various materials</p>
+
+          <p>Download the shader here [UNOPTIMIZED, HDRP ONLY]: <a href="https://yasu3d.art/media/images/mudmap-study/YASU3D_MudShader.shadergraph">YASU3D_MudShader.shadergraph</a></p>
+          <p class="img-subtitle">if you'd like to create mudmaps, here's some tips:
+          <br>> invert an AO map and increase brightness+contrast for a quick and dirty mudmap of pavement.
+          <br>> puddles can easily be painted or generated with blurred noise/gradient noise.
+          <br>> mudmaps should be slightly soft/blurry, greyscale and range from 0 - 255.</p>
+
+          <p><b>Final verdict:</b>
+            <br>I like mud.
+          </p>
         </span>
 
         <!-- <span>
+          <p id="date">27/03/2023</p>
+          <h3><a id="ID">A (poor) analysis of Ultrakill's artstyle.</a></h3>
+          <p>CONTENT</p>
+        </span> -->
+
+                <!-- <span>
           <p id="date">DD/MM/YYYY</p>
           <h3><a id="ID">TITLE.</a></h3>
           <p>CONTENT</p>

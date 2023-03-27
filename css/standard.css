@@ -147,6 +147,11 @@ img {
   user-select: none;
 }
 
+.img-subtitle {
+  font-size: 15px;
+  color: #444;
+}
+
 /* hide device warning */
 #devicewarning {
   display: none;
