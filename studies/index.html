@@ -10,14 +10,16 @@
     <style>
       #index {
         float: right;
-        width: 20%;
-        min-height: calc(100vh - 150px);
+        width: 24%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
         border-left: 1px solid #222;
       }
 
       #posts {
-        float: left;
         width: 75%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
       }
 
       #posts h3 {
@@ -32,7 +34,18 @@
 
       li {
         list-style: none;
-        margin: 10px 0;
+        margin: 15px 0;
+      }
+
+      @media only screen and (max-width: 660px)
+      {
+        #index {
+          display: none;
+        }
+
+        #posts {
+          width: 100%;
+        }
       }
     </style>
 
@@ -66,17 +79,22 @@
           <p>Hello! This is the talky place. I'm gonna (hopefully) write things about graphics and modelling in video games and put 'em here.
             <br>In the meantime, enjoy some more maxwell.
           </p>
-          <img src="/media/images/maxwell.gif" height="120px" width="180px">
+          <img src="/media/images/maxwell.gif" height="120px" width="180px" style="cursor:grab" draggable="false">
         </span>
-        
+
         <!-- <span>
           <p id="date">DD/MM/YYYY</p>
           <h3><a id="ID">TITLE.</a></h3>
           <p>CONTENT</p>
         </span> -->
 
-
       </div>
     </main>
+
+    <div id="devicewarning">
+      <p>this website does not support your current resolution.</p>
+      <p>> this message will appear if your browser window is too thin or your phone is too small.</p>
+    </div>
+
   </body>
 </html>

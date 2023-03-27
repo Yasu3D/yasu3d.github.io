@@ -8,6 +8,42 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas-Bold.woff2') format('woff2'),
+      url('./fonts/Consolas-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas.woff2') format('woff2'),
+      url('./fonts/Consolas.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas-BoldItalic.woff2') format('woff2'),
+      url('./fonts/Consolas-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas-Italic.woff2') format('woff2'),
+      url('./fonts/Consolas-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* alignment */
 
 html, body {
@@ -43,7 +79,18 @@ hr.solid{
   border-bottom: none;
 }
 
-/* text */
+/* hide scrollbar */
+
+html, div {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, div::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* styling */
 
 nav h1 {
   margin-left: 30px;
@@ -54,13 +101,13 @@ nav h1 {
 nav h2 {
   margin-right: 30px;
   font-size: 20px;
-  font-family: consolas;
+  font-family: Consolas;
   text-decoration: underline;
 }
 
 li a {
   font-size: 18px;
-  font-family: consolas;
+  font-family: Consolas;
   text-decoration: none;
 }
 
@@ -83,15 +130,89 @@ h1 h2 h3 p a {
 
 p {
   font-size: 20px;
-  font-family: consolas;
+  font-family: Consolas;
 }
 
 h3 {
-  font-family: consolas;
+  font-family: Consolas;
   font-size: 25px;
 }
 
 h4 {
-  font-family: consolas;
+  font-family: Consolas;
   font-size: 22px;
+}
+
+img {  
+  user-select: none;
+}
+
+/* hide device warning */
+#devicewarning {
+  display: none;
+}
+
+/* ====responsive stuff==== */
+/* tablets */
+@media only screen and (max-width: 870px)
+{
+  nav {
+    margin: 0 5px;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav h1 {
+    margin-left: 15px;
+  }
+
+  nav h2 {
+    margin-right: 15px;
+  }
+}
+
+/* phablets */
+@media only screen and (max-width: 640px)
+{
+  nav ul {
+    text-align: left;
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    padding-left: 0px;
+  }
+
+  nav h2 {
+    position: absolute;
+    right: 15px;
+  }
+}
+
+@media only screen and (max-width: 548px)
+{
+  .solid {
+    margin-top: 35px;
+  }
+}
+
+/*hide button if too short*/
+@media only screen and (max-height: 700px)
+{
+  #button {
+    display: none;
+  }
+}
+
+/* block website if too small */
+@media only screen and (max-width: 330px)
+{
+  nav, main, #button {
+    display: none;
+  }
+
+  #devicewarning {
+    display: block;
+  }
 }

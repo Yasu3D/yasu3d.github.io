@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=en>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// yasu3d - 3d models //</title>
+    <link href="./css/standard.css" rel="stylesheet" type="text/css" media="all">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    
+    <style>
+      #modelviewer {
+        width: 100%;
+        height: 80vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1><a href="/">YASU3D.ART</a></h1>
+      <ul id="tabs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/3d_models">3D Models</a></li>
+        <li><a href="/commissions">Commissions</a></li>
+        <li><a href="/studies">Studies</a></li>
+      </ul>
+      <h2><a href="/contact">Contact</a></h2>
+    </nav>
+
+    <hr class="solid">
+
+    <main>
+        <model-viewer
+      loading="eager"
+      src="/media/3d models/aki_cat.gltf"
+      camera-controls 
+      poster="/images/cat_loading.png" 
+      shadow-intensity="0" 
+      shadow-softness="0" 
+      exposure="1" 
+      environment-image="legacy">
+    </model-viewer>
+      
+    
+    </main>
+
+    <div id="devicewarning">
+      <p>this website does not support your current resolution.</p>
+      <p>> this message will appear if your browser window is too thin or your phone is too small.</p>
+    </div>
+
+  </body>
+</html>
