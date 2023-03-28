@@ -152,6 +152,10 @@ img {
   color: #444;
 }
 
+.icon {
+  user-select: none;
+}
+
 /* hide device warning */
 #devicewarning {
   display: none;
