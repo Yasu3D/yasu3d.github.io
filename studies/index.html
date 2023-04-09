@@ -93,8 +93,8 @@
           <p id="date">27/03/2023</p>
           <h3><a id="mudshader">Making a mud shader.</a></h3>
           <p><i>Soooooo...</i> I've been playing a lot of Red Dead Redemption 2 recently.
-            <br>The game (thanks to the amazing graphics and story) is absolutely stunning, but there's one thing in particular that captivated me
-            <br>: mud and puddles.</p>
+            <br>The game (thanks to the amazing graphics and story) is absolutely stunning, but there's one thing in particular that captivated me:
+            <br>mud and puddles.</p>
           <p>A convincing mud or puddle effect has been something I wanted to do for a while now, so my first thought to achieve that kind of effect was using the roughness and basecolor maps to add puddles. But it's not <i>quite</i> that easy.
           </p>
           <p>My goal with this mini-project isn't to craft an intricate mud-simulation system with displacement- and footstep-maps like RDR2's. 
@@ -123,7 +123,7 @@
           <p>The rest was just figuring out more blending. It's simpler to imagine than to implement. So here's the main parts that make the effect work:
             <br>> The mudmap determines where water pools and where it doesn't. black = dry, white = water.
             <br>> Water flattens out the normalmap. This is done by changing the mudmap from black/white to white/blue, then multiplying it with the main normalmap.
-            <br>> Water also has a smoothness of 1.0, but it gets rougher (=more transparent because it's less reflective) at an angle. This is done by multiplying the mudmap with a fresnel node and adding it to the main roughness map.
+            <br>> Water also has a smoothness of 1.0, but it gets rougher (=more transparent because it's less reflective) when viewed head-on. This is done by multiplying the mudmap with a fresnel node and adding it to the main roughness map.
           </p>
 
           <p>That's basically all the shader does. I only added some extra parameters to tweak the water level and how hard the waterline should be. That's all done with a power and a contrast node.</p>
