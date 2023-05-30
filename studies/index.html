@@ -74,6 +74,7 @@
         <ul>
           <li><a href="#placeforstudies">> A place for Studies and Rambles.</a></li>
           <li><a href="#mudshader">> Making a mud shader.</a></li>
+          <li><a href="#totkgraphics">> Neat graphical tricks in Tears of the Kingdom</a></li>
         </ul>
       </div>
 
@@ -85,6 +86,42 @@
             <br>In the meantime, enjoy some more maxwell.
           </p>
           <img src="https://yasu3d.art/media/images/maxwell.gif" height="120px" width="180px" style="cursor:grab" draggable="false">
+        </span>
+
+        <hr class="solid">
+
+        <span>
+          <p id="date">30/05/2023</p>
+          <h3><a id="totkgraphics">[No Spoilers] Neat graphical trick(s) in Tears of the Kingdom.</a></h3>
+          <p>Like the rest of the internet, I'm playing a lot of The Legend of Zelda Tears of the Kingdom.
+            <br>I noticed a neat little trick used for mesh/grid surfaces to save polygons that's used in plenty of shrines and at least one of the dungeons.
+            <br>
+            <br>Say you have a catwalk with a see-through mesh texture on the floor. You obviously don't want to model every single hole of that mesh.
+            <br>The obvious solution is a flat plane with alpha-cutout. But with that you lose all possible depth in that texture, maybe besides a normalmap.
+            <br>
+            <br>The artists working on Tears of the Kingdom used a clever technique to use cutout but still keep some depth: They simply stacked multiple planes on top of each other.
+          </p>
+          <img src="/media/images/totk-study/grid_trick_2.png" width="100%">
+          <p>
+            I then noticed an even more clever use of this method to simply save polygons on a big plate. It just looks like a solid modeled object, doesn't it? :O
+          </p>
+          <img src="/media/images/totk-study/grid_trick_1.png" width="100%">
+          <p>
+            Well, look closely. There's the same layer lines as that catwalk!
+          </p>
+          <img src="/media/images/totk-study/grid_trick_3.png" width="100%">
+          
+          <h4><br>Replicating the effect:</h4>
+          <p>
+            This is quite straightforward. Model a lowpoly version with a few planes stacked on top of each other, model a highpoly version with all the fancy branches as geometry, render the resulting shape as an alpha texture and apply it to the lowpoly model. Or just draw the alpha texture by hand!
+            <br>To improve lighting around the edges, create a normalmap by using the alpha texture as a heightmap.
+          </p>
+          <img src="/media/images/totk-study/grid_alpha.png" width="50%">
+          <img src="/media/images/totk-study/grid_normal.png" width="50%">
+          <h4>The results:</h4>
+          <img src="/media/images/totk-study/grid_polycount.png" width="100%">
+          <p>It's almost indistinguishable in motion and the illusion only breaks close-up. This method also allows for fancier shapes that you couldn't feasibly model with geometry!
+            <br>If you're developing games for a smaller handheld system like Mobile Phones or the Nintendo Switch, this could be a nice trick to keep in your toolbox.</p>
         </span>
 
         <hr class="solid">
