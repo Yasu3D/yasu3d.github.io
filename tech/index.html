@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang=en>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// yasu3d - tech //</title>
+    <link href="/css/standard.css" rel="stylesheet" type="text/css" media="all">
+    
+    <style>
+      #index {
+        float: right;
+        width: 24%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+        border-left: 1px solid #222;
+      }
+
+      #posts {
+        width: 75%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+      }
+
+      #posts span {
+        padding: 20px 0;
+      }
+
+      #posts h3 {
+        margin-top: 0px;
+      }
+
+      #date {
+        color: #444;
+        font-size: 15px;
+        margin-bottom: 0px;
+      }
+
+      li {
+        list-style: none;
+        margin: 15px 0;
+      }
+
+      @media only screen and (max-width: 660px)
+      {
+        #index {
+          display: none;
+        }
+
+        #posts {
+          width: 100%;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav>
+      <h1><a href="/">YASU3D.ART</a></h1>
+      <ul id="tabs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/my_work">My Work</a></li>
+        <li><a href="/studies">Studies</a></li>
+        <li><a href="/tech">Tech</a></li>
+      </ul>
+      <h2><a href="/contact">Contact</a></h2>
+    </nav>
+
+
+    <hr class="solid">
+
+    <h3>The tech corner.</h3>
+    <p>Here I shall talk about any tech I come across and/or like.
+    <br>And cool software stuff as well probably. Expect lots of nerd shit™</p>
+
+    <hr class="solid">
+
+    <main>
+      <div id="index">
+        <ul>
+          <li><a href="#audio">> Audio</a></li>
+        </ul>
+      </div>
+
+      <div id="posts">
+        <span>
+            <p id="date">01/09/2023</p>
+            <h3><a id="audio">Audio</a></h3>
+            <p>I'm not <i>quite</i> an audiophile, but I do like me some nice audio tech. I don't have some huge wall of headphones or an  entire <a href="https://www.youtube.com/watch?v=KLYoqHttS98">bag of IEMs</a>, just a handful of stuff I enjoy (or don't).</p>
+            <img src="/media/images/tech/blessing3.png" width="100%">
+
+            <h2>The ranking list</h2>
+            <p>These are my opinions. Ranks are mostly relative to <i>each other</i>, not absolute. They'll change with new things I try. I'm also ranking all kinds of audio in one list <i>because I like both apples <b>and</b> oranges, alright?</i></p>
+            <p class="img-subtitle">Value stars are a bit  different to crinacle's.
+                <br> x = do not buy
+                <br> * = diminishing returns
+                <br> ** = worth the money
+                <br> *** = good value
+            </p>
+            <p class="img-subtitle">Numbers in [brackets] under ranks are total tuning, tech and comfort scores. The lower, the better.
+            <br>Think S+ = 1, S = 2, etc. Then add them up for final score and average for the rank.
+            </p>
+
+            <!-- 1  S+
+            2  S
+            3  S-
+            
+            4  A+
+            5  A
+            6  A-
+            
+            7  B+
+            8  B
+            9  B-
+            
+            10 C+
+            11 C
+            12 C-
+            
+            13 D+
+            14 D
+            15 D-
+            
+            16 E+
+            17 E
+            18 E-
+            
+            50 F -->
+
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Tuning</th>
+                    <th>Technical</th>
+                    <th>Comfort</th>
+                    <th>Value</th>
+                    <th>Comment</th>
+                </tr>
+                <tr>
+                    <td>S<br>[5]</td>
+                    <td>Koss KSC75</td>
+                    <td>25.00$<br>[40.00€ in EU]</td>
+                    <td>S</td>
+                    <td>S</td>
+                    <td>S+</td>
+                    <td>***</td>
+                    <td>Neutral-bright with bass rolloff. Basically Valve Index Earspeakers for on the go.</td>
+                </tr>
+                <tr>
+                    <td>S-<br>[9]</td>
+                    <td>Valve Index Earspeakers</td>
+                    <td>499.00$ (technically)</td>
+                    <td>S</td>
+                    <td>S+</td>
+                    <td>A-</td>
+                    <td>**</td>
+                    <td>Neutral-bright tuning with a bass rolloff. Insane soundstage and massive amounts of power. 2 Stars because it's 500$ audio with a free VR headset bolted to it.</td>
+                </tr>
+                <tr>
+                    <td>S-<br>[10]</td>
+                    <td>Moondrop Blessing 3</td>
+                    <td>319.00$</td>
+                    <td>S-</td>
+                    <td>S</td>
+                    <td>A</td>
+                    <td>*</td>
+                    <td>Very neutral, very clean. Slightly lacking midrange. Nice IEM, but suffers a lot from diminishing returns syndrome.</td>
+                </tr>
+                <tr>
+                  <td>A-<br>[18]</td>
+                  <td>AKG K712 Pro</td>
+                  <td>~250.00$</td>
+                  <td>B+</td>
+                  <td>A+</td>
+                  <td>B+</td>
+                  <td>*</td>
+                  <td>Beautiful headphones, but sadly beaten in every way by Koss KSC75. Too warm and almost sound somewhat "muffled".</td>
+              </tr>
+                <tr>
+                    <td>B+<br>[22]</td>
+                    <td>CCA CRA</td>
+                    <td>15.00$</td>
+                    <td>A-</td>
+                    <td>A</td>
+                    <td>C</td>
+                    <td>***</td>
+                    <td>Quite warm and bright. A bit uncomfortable for me but absolute value monsters.</td>
+                </tr>
+                <tr>
+                    <td>D+<br>[40]</td>
+                    <td>Shure SE215</td>
+                    <td>135.00$</td>
+                    <td>D</td>
+                    <td>C-</td>
+                    <td>D</td>
+                    <td>x</td>
+                    <td>Holy mother of mud what the fuck is this and why did I pay money for it.</td>
+                </tr>
+            </table>
+        </span>
+
+        <hr class="solid">
+
+        <!-- <span>
+          <p id="date">DD/MM/YYYY</p>
+          <h3><a id="ID">TITLE.</a></h3>
+          <p>CONTENT</p>
+        </span> -->
+
+      </div>
+    </main>
+
+    <div id="devicewarning">
+      <p>this website does not support your current resolution.</p>
+      <p>> this message will appear if your browser window is too thin or your phone is too small.</p>
+    </div>
+
+  </body>
+</html>
