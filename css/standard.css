@@ -254,7 +254,7 @@ img {
 }
 
 /* block website if too small */
-@media only screen and (max-width: 360px)
+/* @media only screen and (max-width: 303px)
 {
   nav, main, #button {
     display: none;
@@ -263,4 +263,4 @@ img {
   #devicewarning {
     display: block;
   }
-}
+} */
