@@ -4,21 +4,88 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>// yasu3d - 3d models //</title>
+    <title>// yasu3d - tech //</title>
     <link href="/css/standard.css" rel="stylesheet" type="text/css" media="all">
     
     <style>
-    #previewcards img {
-      margin: 20px;
-      width: 256px;
-      height: 256px;
-    }
+      #previewcards img {
+        margin: 20px;
+        width: 256px;
+      }
 
-    img:hover {
-      filter: brightness(70%);
-      transform: scale(1.1);
-      transition: all 100ms ease;
-    }
+      #image-gallery img {
+        width: 50%;
+      }
+
+      #shipped img {
+        width: calc(100% + 40px);
+      }
+
+      #image-gallery img, #shipped img {
+        margin-left: -4px;
+        margin-bottom: -5px;
+      }
+
+      #previewcards img:hover {
+        filter: brightness(70%);
+        transform: scale(1.1);
+        transition: all 100ms ease;
+      }
+
+      #index {
+        float: right;
+        width: 24%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+        border-left: 1px solid #222;
+      }
+
+      #posts {
+        width: 75%;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+      }
+
+      #posts span {
+        padding: 20px 0;
+      }
+
+      #posts h3 {
+        margin-top: 0px;
+      }
+
+      #date {
+        color: #444;
+        font-size: 15px;
+        margin-bottom: 0px;
+      }
+
+      li {
+        list-style: none;
+        margin: 15px 0;
+      }
+
+      @media only screen and (max-width: 1000px)
+      {
+        #image-gallery img {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (max-width: 660px)
+      {
+        #index {
+          display: none;
+        }
+
+        #posts {
+          width: 100%;
+        }
+
+        #previewcards img {
+          width: 40%;
+        }
+      }
     </style>
 
   </head>
@@ -35,46 +102,127 @@
       <h2><a href="/contact">Contact</a></h2>
     </nav>
 
+
+    <hr class="solid">
+
+    <h3>My work.</h3>
+    <p>A small selection of 3d models I'm comfortable making open-source (they're on github since this website is hosted there).
+      <br>Anything "closed-source" that's worth sharing can be found in the other categories.
+    </p>
+
     <hr class="solid">
 
     <main>
-      <h3>Click on a model to preview it!</h3>
-      <p class="img-subtitle">> more will be added in the future.</p>
-
-      <div id="previewcards">
-        <a href="/my_work/preview/biggoronsword"><img src="../media/3d previews/biggoronsword.png" width="256px"></a>
-        <a href="/my_work/preview/godess_sword"><img src="../media/3d previews/godesssword.png" width="256px"></a>
-        <a href="/my_work/preview/akicat"><img src="../media/3d previews/akicat.png" width="256px"></a>
-        <a href="/my_work/preview/luciferprime"><img src="../media/3d previews/luciferprime.png" width="256px"></a>
-        <a href="/my_work/preview/nostalgiaone"><img src="../media/3d previews/nostalgiaone.png" width="256px"></a>
-        <a href="/my_work/preview/standardkart"><img src="../media/3d previews/standardkart.png" width="256px"></a>
-        <a href="/my_work/preview/vans"><img src="../media/3d previews/vans.png" width="256px"></a>
-        <a href="/my_work/preview/valveindex"><img src="../media/3d previews/valve-index.png" width="256px"></a>
-        <a href="/my_work/preview/herculesdj"><img src="../media/3d previews/herculesdjconsolermx.png" width="256px"></a>
-        <a href="/my_work/preview/wacca"><img src="../media/3d previews/waccacab.png" width="256px"></a>
+      <div id="index">
+        <ul>
+          <li><a href="#3d">> 3d gallery</a></li>
+          <li><a href="#images">> image gallery</a></li>
+          <li><a href="#shipped">> shipped projects</a></li>
+        </ul>
       </div>
 
-      <h3><a id="images"><u>Image-only gallery</u></a></h3>
-      <div id="image-gallery">
-        <img src="/media/images/shipped-projects/portal-of-spirits-1.jpg" width="512px">
-        <img src="/media/images/shipped-projects/portal-of-spirits-2.jpg" width="512px">
-        <img src="/media/images/shipped-projects/vulak-1.jpg" width="512px">
-        <img src="/media/images/shipped-projects/vulak-2.jpg" width="512px">
-        <img src="/media/images/shipped-projects/celen-1.jpg" width="512px">
-        <img src="/media/images/shipped-projects/celen-2.jpg" width="512px">
-        <img src="/media/images/shipped-projects/el-dorado-1.jpg" width="512px">
-        <img src="/media/images/shipped-projects/el-dorado-2.jpg" width="512px">
-        <a href="../media/3d gallery/linkV1_base.png"><img src="../media/3d gallery/linkV1_base.png" width="512px"></a>
-        <a href="../media/3d gallery/linkV1_wfrm.png"><img src="../media/3d gallery/linkV1_wfrm.png" width="512px"></a>
-        <a href="../media/3d gallery/alttptrees1.png"><img src="../media/3d gallery/alttptrees1.png" width="512px"></a>
-        <a href="../media/3d gallery/alttptrees2.png"><img src="../media/3d gallery/alttptrees2.png" width="512px"></a>
-        <a href="../media/3d gallery/yasuRender.png"><img src="../media/3d gallery/yasuRender.png" width="512px"></a>
-        <a href="../media/3d gallery/yasuRender_Wireframe.png"><img src="../media/3d gallery/yasuRender_Wireframe.png" width="512px"></a>
-        <a href="../media/3d gallery/InfinityTrain.png"><img src="../media/3d gallery/InfinityTrain.png" width="512px"></a>
-        <a href="../media/3d gallery/InfinityTrain_Wireframe.png"><img src="../media/3d gallery/InfinityTrain_Wireframe.png" width="512px"></a>
-        
-      </div>
+      <div id="posts">
+        <span>
+          <h3><a id="3d">3d gallery</a></h3>
+          <div id="previewcards">
+            <a href="/my_work/preview/biggoronsword"><img src="../media/3d previews/biggoronsword.png" width="256px"></a>
+            <a href="/my_work/preview/godess_sword"><img src="../media/3d previews/godesssword.png" width="256px"></a>
+            <a href="/my_work/preview/akicat"><img src="../media/3d previews/akicat.png" width="256px"></a>
+            <a href="/my_work/preview/luciferprime"><img src="../media/3d previews/luciferprime.png" width="256px"></a>
+            <a href="/my_work/preview/nostalgiaone"><img src="../media/3d previews/nostalgiaone.png" width="256px"></a>
+            <a href="/my_work/preview/standardkart"><img src="../media/3d previews/standardkart.png" width="256px"></a>
+            <a href="/my_work/preview/vans"><img src="../media/3d previews/vans.png" width="256px"></a>
+            <a href="/my_work/preview/valveindex"><img src="../media/3d previews/valve-index.png" width="256px"></a>
+            <a href="/my_work/preview/herculesdj"><img src="../media/3d previews/herculesdjconsolermx.png" width="256px"></a>
+            <a href="/my_work/preview/wacca"><img src="../media/3d previews/waccacab.png" width="256px"></a>
+          </div>
+        </span>
 
+        <hr class="solid">
+
+        <span>
+          <h3><a id="images">image gallery</a></h3>
+          <div id="image-gallery">
+            <a href="/media/images/shipped-projects/portal-of-spirits-1.jpg"><img src="/media/images/shipped-projects/portal-of-spirits-1.jpg"></a>
+            <a href="/media/images/shipped-projects/portal-of-spirits-2.jpg"><img src="/media/images/shipped-projects/portal-of-spirits-2.jpg"></a>
+            <a href="/media/images/shipped-projects/vulak-1.jpg"><img src="/media/images/shipped-projects/vulak-1.jpg"></a>
+            <a href="/media/images/shipped-projects/vulak-2.jpg"><img src="/media/images/shipped-projects/vulak-2.jpg"></a>
+            <a href="/media/images/shipped-projects/celen-1.jpg"><img src="/media/images/shipped-projects/celen-1.jpg"></a>
+            <a href="/media/images/shipped-projects/celen-2.jpg"><img src="/media/images/shipped-projects/celen-2.jpg"></a>
+            <a href="/media/images/shipped-projects/el-dorado-1.jpg"><img src="/media/images/shipped-projects/el-dorado-1.jpg"></a>
+            <a href="/media/images/shipped-projects/el-dorado-2.jpg"><img src="/media/images/shipped-projects/el-dorado-2.jpg"></a>
+            <a href="/media/3d gallery/linkV1_base.png"><img src="/media/3d gallery/linkV1_base.png"></a>
+            <a href="/media/3d gallery/linkV1_wfrm.png"><img src="/media/3d gallery/linkV1_wfrm.png"></a>
+            <a href="/media/3d gallery/alttptrees1.png"><img src="/media/3d gallery/alttptrees1.png"></a>
+            <a href="/media/3d gallery/alttptrees2.png"><img src="/media/3d gallery/alttptrees2.png"></a>
+            <a href="/media/3d gallery/yasuRender.png"><img src="/media/3d gallery/yasuRender.png"></a>
+            <a href="/media/3d gallery/yasuRender_Wireframe.png"><img src="/media/3d gallery/yasuRender_Wireframe.png"></a>
+            <a href="/media/3d gallery/InfinityTrain.png"><img src="/media/3d gallery/InfinityTrain.png"></a>
+            <a href="/media/3d gallery/InfinityTrain_Wireframe.png"><img src="/media/3d gallery/InfinityTrain_Wireframe.png"></a>
+          </div>
+        </span>
+
+        <hr class="solid">
+
+        <span id="shipped">
+            <h3><a id="shipped">shipped projects</a></h3>
+            <h4><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2301308928">The Portal of Spirits</a></h4>
+          <img src="/media/images/shipped-projects/portal-of-spirits-1.jpg">
+          <img src="/media/images/shipped-projects/portal-of-spirits-2.jpg">
+          <p class="img-subtitle">> lead technical 3d artist.
+            <br>
+            <br>> notable contributions:
+            <br>-> the centerpiece flatride inside the tower, an <a href="https://www.intamin.com/project/bungee-drop/">indoor bungee drop by intamin</a> inspired by <a href="https://www.phantasialand.de/de/themenpark/einzigartige-attraktionen/mystery-castle/">mystery castle</a> at Phantasialand, Germany.
+            <br>-> logo design
+            <br>-> models and animations for park visitors (used in all other projects)
+          </p>
+
+          <h4><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2404227957">Vulak</a></h4>
+          <img src="/media/images/shipped-projects/vulak-1.jpg">
+          <img src="/media/images/shipped-projects/vulak-2.jpg">
+          <p class="img-subtitle">
+            > a gerstlauer launch coaster inspired by <a href="https://tripsdrill.de/de/erlebnispark/attraktionen/achterbahnen/detail/katapult-achterbahn-karacho/">Karacho</a> @ Tripsdrill, Germany
+            <br>> lead technical 3d artist.
+            <br>> track designer.
+            <br>
+            <br>> notable contributions:
+            <br>-> custom gerstlauer infinity gen II train
+            <br>-> ride electronics (sensors, brakes, magnets)
+            <br>-> character design and artwork for vulak
+          </p>
+
+          <h4><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2555731008">Celen 2</a></h4>
+          <img src="/media/images/shipped-projects/celen-1.jpg">
+          <img src="/media/images/shipped-projects/celen-2.jpg">
+          <p class="img-subtitle">> lead technical 3d artist.
+            <br>> track designer.
+            <br>> character artist.
+            <br>
+            <br>> notable contributions:
+            <br>-> custom <a href="https://greatcoasters.com/coaster-trains">GCI millenium flyer trains</a>
+            <br>-> modeling and animations for three dragons
+            <br>-> a lot of texture work
+          </p>
+
+          <h4><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2772702338">El Dorado*</a></h4>
+          <img src="/media/images/shipped-projects/el-dorado-1.jpg">
+          <img src="/media/images/shipped-projects/el-dorado-2.jpg">
+          <p class="img-subtitle">* shipped after I left CGW
+            <br>
+            <br>> technical 3d artist
+            <br>> notable contributions:
+            <br>-> HUSS rides suspended topspin
+            <br>-> quetzal statue
+            <br>-> derivative assets from previous projects, such as the intamin drop tower seats.
+          </p>
+        </span>
+
+        <!-- <span>
+          <h3><a id="ID">TITLE.</a></h3>
+          <p>CONTENT</p>
+        </span> -->
+
+      </div>
     </main>
 
     <div id="devicewarning">
